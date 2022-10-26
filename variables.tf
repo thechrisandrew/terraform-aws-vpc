@@ -37,14 +37,21 @@ variable "nat_gateway_type" {
 }
 
 variable "nat_instance_type" {
-  type    = string
-  default = "t4g.nano"
+  type        = string
+  default     = "t4g.nano"
+  description = <<EOT
+  (Optional) Type of NAT instance to use. Only used when nat_gateway_type is set to single_instance.
+  
+  Default: t4g.nano
+  EOT
 }
 
 variable "environment" {
-  type = string
+  type        = string
+  description = "The environment name"
 }
 
 variable "vpc_name" {
-  type = string
+  type        = string
+  description = "The name of the VPC"
 }

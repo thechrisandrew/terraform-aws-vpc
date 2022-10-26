@@ -47,13 +47,13 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | List of availability zones | `list(string)` | n/a | yes |
-| <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | n/a | yes |
+| <a name="input_environment"></a> [environment](#input\_environment) | The environment name | `string` | n/a | yes |
 | <a name="input_nat_gateway_type"></a> [nat\_gateway\_type](#input\_nat\_gateway\_type) | (Optional) Type of NAT gateway to use<br><br>  Options:<br>    - none(default): No NAT gateway will be created.<br>    - single\_instance: NAT gateway will be created using a single EC2 instance(not highly available). Only use this in development<br>    - single\_gateway: NAT gateway will be created using AWS-managed NAT gateway on a single subnet(not highly available). Only use this in development.<br>    - multi\_gateway: NAT gateway will be created using AWS-managed NAT gateway on all public subnets in each avaibility zone. Recommended for production.<br><br>  Default: none | `string` | `"none"` | no |
-| <a name="input_nat_instance_type"></a> [nat\_instance\_type](#input\_nat\_instance\_type) | n/a | `string` | `"t4g.nano"` | no |
+| <a name="input_nat_instance_type"></a> [nat\_instance\_type](#input\_nat\_instance\_type) | (Optional) Type of NAT instance to use. Only used when nat\_gateway\_type is set to single\_instance.<br><br>  Default: t4g.nano | `string` | `"t4g.nano"` | no |
 | <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | List of private subnets | `list(string)` | n/a | yes |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | List of public subnets | `list(string)` | n/a | yes |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | The CIDR block for the VPC. | `string` | `"10.0.0.0/16"` | no |
-| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | n/a | `string` | n/a | yes |
+| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | The name of the VPC | `string` | n/a | yes |
 
 ## Outputs
 
