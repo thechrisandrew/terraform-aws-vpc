@@ -1,7 +1,7 @@
 module "vpc" {
   source = "../../"
 
-  vpc_name    = "laravel"
+  vpc_name    = "example-vpc"
   environment = "testing"
 
   availability_zones = ["ap-southeast-1a", "ap-southeast-1b", "ap-southeast-1c"]
