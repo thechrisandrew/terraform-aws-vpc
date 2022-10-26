@@ -19,15 +19,32 @@ variable "availability_zones" {
   description = "List of availability zones"
 }
 
-variable "enable_nat_gateway" {
-  type    = bool
-  default = false
+variable "nat_gateway_type" {
+  type        = string
+  description = <<EOT
+  (Optional) Type of NAT gateway to use
+  
+  Options:
+    - none(default): No NAT gateway will be created.
+    - single_instance: NAT gateway will be created using a single EC2 instance(not highly available). Only use this in development
+    - single_gateway: NAT gateway will be created using AWS-managed NAT gateway on a single subnet(not highly available). Only use this in development.
+    - multi_gateway: NAT gateway will be created using AWS-managed NAT gateway on all public subnets in each avaibility zone. Recommended for production.
+
+  Default: none
+  EOT
+
+  default = "none"
+}
+
+variable "nat_instance_type" {
+  type    = string
+  default = "t4g.nano"
 }
 
 variable "environment" {
-
+  type = string
 }
 
 variable "vpc_name" {
-
+  type = string
 }
